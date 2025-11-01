@@ -1,0 +1,27 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import reducer from './reducers';
+import { getAllProducts } from './actions';
+import './index.css';
+
+const store = configureStore({
+    reducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false,
+        }),
+});
+
+// Tải danh sách sản phẩm khi app khởi chạy
+store.dispatch(getAllProducts());
+
+ReactDOM.createRoot(document.getElementById('root3')).render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>
+);
