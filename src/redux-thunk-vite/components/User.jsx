@@ -8,13 +8,12 @@ function User() {
         <div className="user-container">
             <div className="user-content">
                 <h2 className="user-title">📋 Danh sách người dùng</h2>
-
                 <div className="table-container">
                     <table className="user-table">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>👤 Tên</th>
+                            <th>🆔 ID</th>
+                            <th>👤 Name</th>
                             <th>📧 Email</th>
                             <th>🌐 Website</th>
                         </tr>
@@ -31,12 +30,6 @@ function User() {
                         </tbody>
                     </table>
                 </div>
-
-                {users.length === 0 && (
-                    <div className="no-data">
-                        🔍 Chưa có dữ liệu người dùng
-                    </div>
-                )}
             </div>
         </div>
     );
